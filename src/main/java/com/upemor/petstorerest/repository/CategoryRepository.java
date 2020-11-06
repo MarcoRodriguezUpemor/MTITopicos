@@ -7,5 +7,5 @@ import com.upemor.petstorerest.model.Category;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
-
+	Category findById(int id);
 }

@@ -8,4 +8,5 @@ import com.upemor.petstorerest.model.Orderpet;
 @Repository
 public interface OrderpetRepository extends JpaRepository<Orderpet, Integer> {
 
+	Orderpet findById(int id);
 }

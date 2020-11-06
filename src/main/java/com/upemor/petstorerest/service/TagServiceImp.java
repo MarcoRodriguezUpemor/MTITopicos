@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.upemor.petstorerest.model.Tag;
-import com.upemor.petstorerest.model.User;
 import com.upemor.petstorerest.repository.TagRepository;
 
 @Service
