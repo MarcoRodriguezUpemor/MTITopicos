@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+            <div class="form-signin">
+                <img class="mb-4" src="/assets/images/petstore.png" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
+                <label for="inputEmail" class="sr-only">Nombre de usuario</label>
+                <input [(ngModel)]="user.username" name="username" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputPassword" class="sr-only">Contraseña</label>
+                <input [(ngModel)]="user.password" name="password"  type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="button" (click)="login()">Iniciar</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+            </div>
+
+        </div>
+    </div>
+</div>
