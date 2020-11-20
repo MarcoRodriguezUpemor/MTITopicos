@@ -5,14 +5,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.upemor.petstorerest.model.Category;
 import com.upemor.petstorerest.model.Pet;
+import com.upemor.petstorerest.model.Tag;
+import com.upemor.petstorerest.repository.CategoryRepository;
 import com.upemor.petstorerest.repository.PetRepository;
+import com.upemor.petstorerest.repository.TagRepository;
 
 @Service
 public class PetServiceImp implements PetService{
 
 	@Autowired
 	PetRepository petRepository;
+	
+	@Autowired
+	CategoryRepository categoryRepository;
+	
+	@Autowired
+	TagRepository tagRepository;
 	
 	@Override
 	public List<Pet> listAllPets() {
@@ -27,8 +37,16 @@ public class PetServiceImp implements PetService{
 	}
 
 	@Override
-	public void createPet(Pet pet) {
+	public boolean createPet(Pet pet) {
+		if(pet.equals(petRepository.findByName(pet.getName()))) {
+			return false;
+		}
+		Category category = categoryRepository.findById(pet.getCategory().getId());
+		Tag tag = tagRepository.findById(pet.getTag().getId());
+		pet.setCategory(category);
+		pet.setTag(tag);
 		petRepository.save(pet);
+		return true;
 	}
 
 	@Override

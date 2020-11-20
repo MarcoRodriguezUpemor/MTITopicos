@@ -9,4 +9,6 @@ import com.upemor.petstorerest.model.Pet;
 public interface PetRepository extends JpaRepository<Pet, Integer>{
 
 	Pet findById(int id);
+	
+	Pet findByName(String name);
 }

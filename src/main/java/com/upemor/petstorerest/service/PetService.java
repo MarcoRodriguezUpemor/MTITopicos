@@ -10,7 +10,7 @@ public interface PetService {
 	
 	Pet findById(int id);
 	
-	void createPet(Pet pet);
+	boolean createPet(Pet pet);
 	
 	Pet updatePet(int id,Pet pet);
 	
